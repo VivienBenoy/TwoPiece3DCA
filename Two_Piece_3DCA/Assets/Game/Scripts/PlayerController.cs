@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded)
         {
             // We are grounded, so recalculate movedirection directly from axes
-            moveDirection = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))
