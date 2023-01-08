@@ -5,25 +5,83 @@ using UnityEngine;
 public class AnimaController : MonoBehaviour
 {
     public GameObject player;
-   
+    public Animator animator;
+    int isWalkingFHash;
+    int isWalkingBHash;
+    int isWalkingLHash;
+    int isWalkingRHash;
+    int isJumpingHash;
+    private void Start()
+    {
+        animator = player.GetComponent<Animator>();
+        isWalkingFHash = Animator.StringToHash("isWalkingFront");
+        isWalkingBHash = Animator.StringToHash("isWalkingBack");
+        isWalkingLHash = Animator.StringToHash("isStrafingLeft");
+        isWalkingRHash = Animator.StringToHash("isStrafingRight");
+        isJumpingHash = Animator.StringToHash("isJumping");
+    }
+
     void Update()
     {
-        if(Input.GetButtonDown("Front"))
+        bool isWalking = animator.GetBool(isWalkingFHash);
+        bool isWalkingB = animator.GetBool(isWalkingBHash);
+        bool isWalkingL = animator.GetBool(isWalkingLHash); 
+        bool isWalkingR = animator.GetBool(isWalkingRHash);
+        bool isJumping = animator.GetBool(isJumpingHash);
+
+        bool isWpressed = Input.GetButton("Front");
+
+        if(!isWalking && isWpressed)
         {
-            player.GetComponent<Animator>().Play("RunForward");
+            animator.SetBool(isWalkingFHash, true);
         }
-        if (Input.GetButtonDown("Backward"))
+        if(isWalking && !isWpressed)
         {
-            player.GetComponent<Animator>().Play("RunBackward");
+            animator.SetBool(isWalkingFHash, false);
         }
-        if (Input.GetButtonDown("Left"))
+       
+        bool isSpressed = Input.GetButton("Backward");
+        if (!isWalkingB && isSpressed)
         {
-            player.GetComponent<Animator>().Play("StrafeLeft");
+            animator.SetBool(isWalkingBHash, true);
         }
-        if (Input.GetButtonDown("Right"))
+        if (isWalkingB && !isSpressed)
         {
-            player.GetComponent<Animator>().Play("StrafeRight");
+            animator.SetBool(isWalkingBHash, false);
         }
+
         
+        bool isApressed = Input.GetButton("Left");
+        if (!isWalkingL && isApressed)
+        {
+            animator.SetBool(isWalkingLHash, true);
+        }
+        if (isWalkingL && !isApressed)
+        {
+            animator.SetBool(isWalkingLHash, false);
+        }
+
+       
+        bool isDpressed = Input.GetButton("Right");
+        if (!isWalkingR && isDpressed)
+        {
+            animator.SetBool(isWalkingRHash, true);
+        }
+        if (isWalkingR && !isDpressed)
+        {
+            animator.SetBool(isWalkingRHash, false);
+        }
+        bool isSpace = Input.GetButton("Jump");
+        if (!isJumping && isSpace)
+        {
+            animator.SetBool(isJumpingHash, true);
+        }
+        if (isWalkingR && !isDpressed)
+        {
+            animator.SetBool(isJumpingHash, false);
+        }
+
+
+
     }
 }
