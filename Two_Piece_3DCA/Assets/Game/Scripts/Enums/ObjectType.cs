@@ -1,6 +1,6 @@
 namespace Game
 {
-    public enum Objecttype: sbyte
+    public enum ObjectType: sbyte
     {
         Pickup, Player, Enemy, Box, Chest
     }
