@@ -43,7 +43,7 @@ public class PickUpController : MonoBehaviour
                 
             }
         }
-        if (Input.GetButtonDown("q") && isPicked == true) 
+        if (Input.GetKeyDown("q") && isPicked == true) 
         {
             keys.GetComponent<Rigidbody>().isKinematic = false; 
 
