@@ -1580,6 +1580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamestate: 0
   isPaused: 0
+  chest: {fileID: 316214756}
+  player: {fileID: 840964802}
 --- !u!4 &244647892
 Transform:
   m_ObjectHideFlags: 0
@@ -2136,6 +2138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331031347}
+  - component: {fileID: 331031348}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -2249,6 +2252,102 @@ Transform:
   m_Father: {fileID: 597245437}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &331031348
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331031346}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 37ecb2c03b69fdf4f986c98c80480518, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.882
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &344770622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,6 +5604,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 840964798}
   animator: {fileID: 0}
+--- !u!114 &840964805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840964798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4331c273ff9544cb11b2554254b6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 840964798}
+  health: 100
+  attackDamage: 20
 --- !u!1 &871588864
 GameObject:
   m_ObjectHideFlags: 0
@@ -9584,10 +9698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c95a4884d6b4e84db3462ac0b473869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
+  enemyType: 2
   health: 100
   attackPower: 10
-  player: {fileID: 0}
+  player: {fileID: 840964802}
   attackRange: 5
 --- !u!1001 &1958137738
 PrefabInstance:
@@ -10101,7 +10215,7 @@ MonoBehaviour:
     name: key 1
     value: 1
     weight: 5
-    stackable: 1
+    stackable: 0
     item: {fileID: 1072764603}
     questItem: 1
   inventory: {fileID: 1840461589}
@@ -10232,9 +10346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 2105575794}
   health: 0
-  player: {fileID: 0}
+  player: {fileID: 840964802}
 --- !u!114 &2105575794
 MonoBehaviour:
   m_ObjectHideFlags: 0

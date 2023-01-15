@@ -8,11 +8,14 @@ namespace Game
     {
         public int gamestate;
         public bool isPaused;
-     
+        public Transform chest;
+        public Transform player;
 
         public void Start()
         {
-            gamestate = 1;
+            gamestate = 0;
+            chest = GameObject.FindWithTag("Chest").transform;
+            player = GameObject.FindWithTag("Player").transform;
             InitializeEnvironment();
             StartCoroutine(GameLoop());
         }
@@ -41,6 +44,16 @@ namespace Game
         public void Pause()
         {
             isPaused = true;
+        }
+        public void WinOrLose()
+        {
+
+            if (chest.GetComponent<Chest>().OnMouseDown())
+                gamestate = 1;
+            if (player.GetComponent<Player>().health == 0)
+                gamestate = 2;  
+          
+
         }
 
         private IEnumerator PlayLevel()

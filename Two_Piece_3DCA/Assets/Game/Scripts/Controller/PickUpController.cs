@@ -16,7 +16,7 @@ public class PickUpController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="object")
+        if(other.gameObject.tag=="Player")
         {
             canPick = true;
             keys = other.gameObject;
@@ -33,7 +33,7 @@ public class PickUpController : MonoBehaviour
 
         if (canPick == true) 
         {
-            if (Input.GetKeyDown("e")) 
+            if (Input.GetKeyDown(KeyCode.E)) 
             {
                 keys.GetComponent<Rigidbody>().isKinematic = true;   
                 keys.transform.position = player.transform.position;
@@ -43,7 +43,7 @@ public class PickUpController : MonoBehaviour
                 
             }
         }
-        if (Input.GetKeyDown("q") && isPicked == true) 
+        if (Input.GetKeyDown(KeyCode.Q) && isPicked == true) 
         {
             keys.GetComponent<Rigidbody>().isKinematic = false; 
 

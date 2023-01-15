@@ -25,7 +25,6 @@ using UnityEngine;
             float vertical = Input.GetAxisRaw("Vertical");
             if (controller.isGrounded)
             {
-                // We are grounded, so recalculate movedirection directly from axes
                 moveDirection = new Vector3(horizontal, 0, vertical);
                 if (moveDirection.magnitude >= 0.1f)
                 {
@@ -43,10 +42,8 @@ using UnityEngine;
                 }
             }
 
-            // Apply gravity
             moveDirection.y -= gravity * Time.deltaTime;
 
-            // Move the controller
             controller.Move(moveDirection * Time.deltaTime);
         }
     }
