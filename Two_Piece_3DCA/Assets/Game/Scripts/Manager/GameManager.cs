@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +8,7 @@ namespace Game
     {
         public int gamestate;
         public bool isPaused;
-        public Button playButton;
-        public Button quitButton;
+     
 
         public void Start()
         {
@@ -69,16 +68,7 @@ namespace Game
             else
                 Time.timeScale = 1;
 
-            playButton.onClick.AddListener(OnClick1);
-            quitButton.onClick.AddListener(OnClick2);
         }
-        private void OnClick1()
-        {
-            gamestate = 2;
-        }
-        private void OnClick2()
-        {
-            gamestate = 3;
-        }
+      
     }
 }
