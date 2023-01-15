@@ -16,8 +16,11 @@ public class Player : MonoBehaviour
             Die();
         }
     }
-
-    void Die()
+    public int getHealth()
+    {
+        return health;
+    }
+    public void Die()
     {
         GetComponent<PlayerController>().enabled = false;
         GetComponent<AnimaController>().enabled = false;
