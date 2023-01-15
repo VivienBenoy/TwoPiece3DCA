@@ -6,8 +6,7 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     public Inventory inventory;
-    public Item requiredItem;
-    public int requiredAmount;
+    public int requiredAmount=5;
     public bool opened;
     public void Start()
     {
@@ -15,7 +14,7 @@ public class Chest : MonoBehaviour
     }
     public bool OnMouseDown()
     {
-        if (inventory.CountItem(requiredItem) == requiredAmount)
+        if (inventory.NumberOfItems() == requiredAmount)
         {
             opened = true;
         }

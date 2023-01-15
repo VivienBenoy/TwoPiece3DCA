@@ -32,4 +32,8 @@ public class Inventory : MonoBehaviour
     {
         return items.Count(i => i.name == item.name);
     }
+    public int NumberOfItems()
+    {
+        return items.Capacity;
+    }
 }
