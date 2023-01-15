@@ -32,7 +32,7 @@ namespace Game
         void RandomMovement()
         {
             // Randomly change the enemy's position
-            transform.position = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y, transform.position.z + Random.Range(-1f, 1f));
+            transform.position = new Vector3(transform.position.x + Random.Range(-0.1f, 0.1f), transform.position.y, transform.position.z + Random.Range(-0.1f, 0.1f));
         }
 
         void Attack()
