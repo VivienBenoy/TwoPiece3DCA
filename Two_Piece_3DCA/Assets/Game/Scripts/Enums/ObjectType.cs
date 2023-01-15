@@ -1,3 +1,4 @@
+
 namespace Game
 {
     public enum ObjectType: sbyte
